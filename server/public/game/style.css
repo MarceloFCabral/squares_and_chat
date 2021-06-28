@@ -1,0 +1,48 @@
+html, body {
+  margin: 0px;
+}
+
+#square {
+  background-color: red;
+  height: 30px;
+  width: 30px;
+}
+
+.chatbar {
+  background-color: steelblue;
+  /*height: 40px;*/
+  border-top: 1px solid black;
+}
+
+.chat {
+  border-top: 1px solid black;
+  /*height: 200px;*/
+  top: 0px;
+  position: fixed;
+}
+
+.game {
+  background-color: white;
+  /*height: 700px;*/
+}
+/*
+.animate {
+  animation: moveUp .6s 1;
+}
+
+@keyframes moveUp {
+  25% {
+    transform: translate3d(0px, -20px, 0px);
+    animation-timing-function: ease-in; 
+  }
+
+  50% {
+    transform: translate3d(0px, -25px, 0px);
+  }
+
+  100% {
+    transform: translate3d(0px, -40px, 0px);
+    animation-timing-function: ease-out;
+  }
+}
+*/
