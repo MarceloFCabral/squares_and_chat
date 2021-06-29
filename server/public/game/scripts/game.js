@@ -1,18 +1,17 @@
 const SINGLE_MOV_DIST = 6;
 
-const PROJ_WIDTH = '100px';
-const PROJ_HEIGHT = '35px';
+const PROJ_WIDTH = 80;
+const PROJ_HEIGHT = 20;
 const PROJ_COLOR = 'grey';
 //const PROJ_X_MOV_DIST = 6;
 //const PROJ_Y_MOV_DIST = 6;
-const PROJ_MOV_DIST = 18;
+const PROJ_MOV_DIST = 25/*18*/;
 
 const keys = {};
 
 const lerp = (currX, aX, aY, bX, bY) => ((aY * (bX - currX) + bY * (currX - aX)) / (bX - aX));
 
 const moveProjectile = (proj, p0X, p0Y, mX, mY, sin, cos) => {
-  //proj.style.top = lerp(parseInt(proj.style.left), p0X, p0Y, mX, mY) + 'px';
   const left = parseInt(proj.style.left);
   const top = parseInt(proj.style.top);
   if (p0Y > mY)
@@ -24,17 +23,16 @@ const moveProjectile = (proj, p0X, p0Y, mX, mY, sin, cos) => {
     proj.style.left = left - Math.abs(cos) * PROJ_MOV_DIST + 'px';
   else
     proj.style.left = left + Math.abs(cos) * PROJ_MOV_DIST + 'px';
-  //proj.style.left = parseInt(proj.style.left) + PROJ_X_MOV_DIST + 'px';
 };
 
 const setProjStyle = (proj, userSquare) => {
   proj.style.position = 'absolute';
-  proj.style.left = userSquare.centerX + 'px';
-  proj.style.top = userSquare.centerY + 'px';
+  proj.style.left = userSquare.centerX - PROJ_WIDTH / 2 + 'px';
+  proj.style.top = userSquare.centerY - PROJ_HEIGHT / 2 + 'px';
   console.log("projectile left =", proj.style.left);
   console.log("projectile top =", proj.style.top);
-  proj.style.width = PROJ_WIDTH;
-  proj.style.height = PROJ_HEIGHT;
+  proj.style.width = PROJ_WIDTH + 'px';
+  proj.style.height = PROJ_HEIGHT + 'px';
   proj.style.backgroundColor = PROJ_COLOR;
 };
 

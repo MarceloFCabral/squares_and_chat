@@ -12,8 +12,8 @@ var userData = JSON.parse(window.localStorage.getItem('userData'));
 
 // set initial user position
 const getRandomPos = () => {
-  const top = Math.floor(Math.random() * (window.innerHeight - SQUARE_SIDE + 1));
-  const left = Math.floor(Math.random() * (window.innerWidth - SQUARE_SIDE + 1));
+  const top = Math.floor(Math.random() * (window.innerHeight - SQUARE_SIDE));
+  const left = Math.floor(Math.random() * (window.innerWidth - SQUARE_SIDE));
   return { top, left };
 };
 
@@ -36,8 +36,6 @@ const generateNewPlayer = playerData => {
   playerName.innerHTML = playerData.username;
   newPlayer.appendChild(playerName);
   console.log("newPlayer end =", newPlayer);
-  newPlayer.centerX = (parseInt(userSquare.style.left) + (parseFloat(userSquare.style.width) / 2));
-  newPlayer.centerY = (parseInt(userSquare.style.top) + (parseFloat(userSquare.style.height) / 2));
   document.querySelector('.game').appendChild(newPlayer); 
 };
 
