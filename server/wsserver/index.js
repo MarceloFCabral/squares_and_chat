@@ -69,12 +69,8 @@ const setUpServer = () => {
       su.streamFile(res, 'login/style.css', 'text/css');
     } else if (url === '/scripts') {
       su.streamFile(res, 'login/scripts.js', 'text/javascript');
-    } else if (url === '/game/scripts/network') {
-      su.streamFile(res, 'game/scripts/network.js', 'text/javascript');
-    } else if (url === '/game/scripts/game') {
-      su.streamFile(res, 'game/scripts/game.js', 'text/javascript');
-    } else if (url === '/game/scripts/ui') {
-      su.streamFile(res, 'game/scripts/ui.js', 'text/javascript');
+    } else if (url === '/gamescript') {
+      su.streamFile(res, 'game/game.js', 'text/javascript');
     } else if (url === '/gamestyle') {
       su.streamFile(res, 'game/style.css', 'text/css');
     } else if (url === '/register') {
